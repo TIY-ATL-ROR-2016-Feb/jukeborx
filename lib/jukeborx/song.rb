@@ -1,5 +1,7 @@
 module Jukeborx
   class Song < ActiveRecord::Base
+    has_many :plays
+
     def play
       spawn("afplay \"#{self.filename}\"")
     end
